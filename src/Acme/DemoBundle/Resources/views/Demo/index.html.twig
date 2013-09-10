@@ -1,0 +1,11 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+{# override the body block from embedded.html.twig #}
+{% block content %}
+    {{ include("AcmeDemoBundle:Demo:embedded.html.twig") }}
+    {{ render(controller("AcmeDemoBundle:Demo:fancy", {'name': name, 'color': 'green'})) }}
+    <a href="{{ path('_demo_hello', { 'name': 'Thomas' }) }}">Greet Thomas!</a>
+{% endblock %}
